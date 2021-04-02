@@ -21,10 +21,10 @@ import QuartzCore
 
     var emitter: CAEmitterLayer!
     @objc public var colors: [UIColor]!
-    public var intensity: Float!
-    public var type: ConfettiType!
-    public var customImage: UIImage!
-    private var active :Bool!
+    @objc public var intensity: Float!
+    @objc public var type: ConfettiType!
+    @objc public var customImage: UIImage!
+    @objc private var active :Bool!
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
