@@ -9,21 +9,20 @@
 import UIKit
 import QuartzCore
 
-@objc public class SAConfettiView: UIView {
+public class SAConfettiView: UIView {
 
-    @objc public enum ConfettiType: Int {
+    public enum ConfettiType {
         case confetti
         case triangle
         case star
         case diamond
-        case image
+        case image(UIImage)
     }
 
     var emitter: CAEmitterLayer!
     public var colors: [UIColor]!
     public var intensity: Float!
     public var type: ConfettiType!
-    public var customImage: UIImage!
     private var active :Bool!
 
     required public init?(coder aDecoder: NSCoder) {
@@ -82,7 +81,7 @@ import QuartzCore
             fileName = "star"
         case .diamond:
             fileName = "diamond"
-        case .image:
+        case let .image(customImage):
             return customImage
         }
 
